@@ -3,17 +3,18 @@
 This is a sample of a query builder function. The idea is pass in a query object:
 
     qry = {
-        tables: {
+        queryType: 'select',
+        from: {
             Users: {
 
             }
         }, 
-        selectVals: {
+        values: {
             val1 : 'UserName',
             val2 : 'UserFName',
             val3 : 'UserLName'
         },
-        filter: {
+        where: {
             UserName: `'bjones'`,
             UserFName: `'Bob'`,
             UserLName: `'Jones'`
