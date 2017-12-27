@@ -3,9 +3,10 @@ function Query() {}
 Query.prototype.queryBuilder = (qryObject) => {
 
     //parses out the query object
-    this.selectValues = qryObject.selectVals
-    this.filterValues = qryObject.filter || {}
-    this.tableObject = qryObject.tables
+    this.queryType = qryObject.queryType
+    this.selectValues = qryObject.values
+    this.filterValues = qryObject.where || {}
+    this.tableObject = qryObject.from
     this.filter = qryObject.filtered || false
 
     //returns an array of Columns from the selectValues section of the query object.
@@ -26,7 +27,7 @@ Query.prototype.queryBuilder = (qryObject) => {
     }
     
     //returns the query string.
-    return `select ${this.scon()} from ${this.tables()} ${(this.filter ? 'where '  + this.fcon()  : '')}`
+    return `${this.queryType} ${this.scon()} from ${this.tables()} ${(this.filter ? 'where '  + this.fcon()  : '')}`
 }
 
 module.exports = Query

@@ -2,15 +2,16 @@
 A group of Query Objects. The Base Object looks like:
 
 queryName: {
-    tables: {
+    queryType: <<select, insert, update, delete>>,
+    from: {
         tableName: {
             tableOptions
         }
     },
-    selectVals: {
+    values: {
         values
     },
-    filter: {
+    where: {
         columnName: Value
     },
     filtered: bool
@@ -29,17 +30,18 @@ filter: includes a set of columns and the values to filter on.
 
 const selectQueries = {
     userQuery : {
-        tables: {
+        queryType: 'select',
+        from: {
             Users: {
     
             }
         }, 
-        selectVals: {
+        values: {
             val1 : 'UserName',
             val2 : 'UserFName',
             val3 : 'UserLName'
         },
-        filter: {
+        where: {
             UserName: `'bjones'`,
             UserFName: `'Bob'`,
             UserLName: `'Jones'`
@@ -47,17 +49,18 @@ const selectQueries = {
         filtered: true
     },
     departmentQuery: {
-        tables: {
+        queryType: 'select',
+        from: {
             Departments: {
     
             }
         }, 
-        selectVals: {
+        values: {
             val1 : 'DepartmentName',
             val2 : 'DepartmentManager',
             val3 : 'DepartmentDescription'
         },
-        filter: {
+        where: {
 
         }, 
         filtered: false
