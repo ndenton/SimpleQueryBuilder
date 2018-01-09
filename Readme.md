@@ -16,11 +16,15 @@ This is a sample of a query builder function. The idea is pass in a query object
             }
         }, 
         values: {
-            Users_1 : 'UserName',
-            Users_2 : 'UserFName',
-            Users_3 : 'UserLName',
-            Accounts_1 : 'AccountId',
-            Accounts_2 : 'AccountName'
+            Users: {
+                val1: "UserName",
+                val2: "UserFName",
+                val3: "UserLName"
+            },
+            Accounts_1 : {
+                val1: "AccountId",
+                val2: "AccountName"
+            }
         },
         where: {
             Users: {
