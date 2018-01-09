@@ -21,7 +21,7 @@ This is a sample of a query builder function. The idea is pass in a query object
                 val2: "UserFName",
                 val3: "UserLName"
             },
-            Accounts_1 : {
+            Accounts : {
                 val1: "AccountId",
                 val2: "AccountName"
             }
